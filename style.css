@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+.logo{width:100px;display:inline-flexbox;}
+body{display: fixed;margin: left 40px;background-color: rgba(246, 36, 89,0.5);}
+a{text-decoration: none;padding: 10px;font-size: 50px;font-weight: 8000;font-style: italic;font-style: bold;}
+nav{text-align: center;letter-spacing: 20px;}
+.ul1{background-color: rgba(27, 250, 239, 0.5);font-family: 'New Tegomin', serif;}
+.ul2{text-transform:uppercase;list-style-type:none;}
+li:hover:nth-child(odd){color: sienna;}
+footer ul li{padding-left: 40px;}
+.ul{background-color: rgba(201, 100, 64,0.5);}
