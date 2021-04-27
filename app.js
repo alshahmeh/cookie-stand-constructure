@@ -25,7 +25,6 @@ function randomcust(minCustomers, maxCustomers) {
   );
 }
 let cookiesPerHourAllCities = [];
-let totalCookiesPerHourPerLocation = 0;
 let totalOfTotal=0;
 /*this is a constructor*/
 function City(shopName, minCust, maxCust, avgCookiesPerCust) {
@@ -86,6 +85,7 @@ City.prototype.footer=function(){
   lastRow.appendChild(data1Lastrow);
   data1Lastrow.textContent = 'Total';
   for (let a = 0; a < workHours.length; a++) {
+    let totalCookiesPerHourPerLocation = 0;
     const dataLastrow = document.createElement('td');
     lastRow.appendChild(dataLastrow);
     for (let b = 0; b < cookiesPerHourAllCities.length; b++) {
