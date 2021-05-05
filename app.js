@@ -16,6 +16,8 @@ let workHours = [
   '6:00 pm',
   '7:00 pm',
 ];
+let cookiesPerHourAllCities = [];
+let totalOfTotal=0;
 /*this method generate random number*/
 function randomcust(minCustomers, maxCustomers) {
   return Math.floor(
@@ -24,8 +26,6 @@ function randomcust(minCustomers, maxCustomers) {
         (maxCustomers - minCustomers)
   );
 }
-let cookiesPerHourAllCities = [];
-let totalOfTotal=0;
 /*this is a constructor*/
 function City(shopName, minCust, maxCust, avgCookiesPerCust) {
   this.name = shopName;
@@ -47,6 +47,7 @@ function City(shopName, minCust, maxCust, avgCookiesPerCust) {
   /*This is render method ====>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
   this.render = function () {
     const row = document.createElement('tr');
+    row.setAttribute('id','row');
     table.appendChild(row);
     const dataFirst = document.createElement('td');
     row.appendChild(dataFirst);
@@ -80,6 +81,7 @@ City.prototype.header = function () {
 /*This is footer method ====>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 City.prototype.footer=function(){
   const lastRow = document.createElement('tr');
+  lastRow.setAttribute('id','lastRow');
   table.appendChild(lastRow);
   const data1Lastrow = document.createElement('td');
   lastRow.appendChild(data1Lastrow);
@@ -99,11 +101,24 @@ City.prototype.footer=function(){
   lastRow.appendChild(lastDataLastRow);
   lastDataLastRow.textContent = totalOfTotal;
 };
-City.prototype.header();
-new City('tokyo', 3, 24, 1.2);
-new City('seattle', 23, 65, 6.3);
-new City('dubai', 11, 38, 3.7);
-new City('paris', 20, 38, 2.3);
-new City('lima', 2, 16, 4.6);
-for(let x=0;x<cookiesPerHourAllCities.length;x++){cookiesPerHourAllCities[x].render();}
-City.prototype.footer();
+
+
+
+
+const button =document.getElementById('button');
+  const input=document.getElementById('input');
+  const input1=document.getElementById('input1');
+  const input2=document.getElementById('input2');
+  const input3=document.getElementById('input3');
+
+  button.addEventListener('click',()=>{while(table.rows.length>0){table.deleteRow(0);} City.prototype.header(); new City(input.value,input1.value, input2.value, input3.value); 
+    for(let x=0;x<cookiesPerHourAllCities.length;x++){cookiesPerHourAllCities[x].render();}
+    input.value='';
+    input1.value='';
+    input2.value='';
+    input3.value='';
+  City.prototype.footer();
+});
+    
+
+
